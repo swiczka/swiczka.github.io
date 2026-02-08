@@ -51,27 +51,18 @@ const handleClick = () => {
   }, displayTimeMs);
 };
 
-// Funkcja obliczająca losową pozycję "po bokach"
-const calculateRandomPosition = () => {
-  leftPos.value = props.x;
-  topPos.value = props.y;
-};
 
 // Computed property łączące zmienne w styl CSS
 const positionStyle = computed(() => ({
-  top: `${topPos.value}vh`,
-  left: `${leftPos.value}vw`,
+  marginLeft: `${props.x}%`,
+  marginRight: `${-props.x}%`,
 }));
 
-// Gdy komponent się ładuje, oblicz pozycję
-onMounted(() => {
-  calculateRandomPosition();
-});
 </script>
 
 <template>
   <div
-    class="fixed z-50 cursor-pointer hover:scale-110 transition-transform duration-300 animate-float select-none"
+    class="z-50 cursor-pointer hover:scale-110 transition-transform duration-300 animate-float select-none"
     :style="positionStyle"
     @click="handleClick"
   >
