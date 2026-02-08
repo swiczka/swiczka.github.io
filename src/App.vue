@@ -134,6 +134,7 @@ onUnmounted(() => {
         <h2 class="text-3xl font-bold text-pink-600 text-center" :class="noClicked ? 'uppercase' : ''">
           {{ isHappy ? "sooo ez 🥰" : "zostaniesz moją walentynką???" }}
         </h2>
+        <p class="font-bold text-pink-600 text-center text-xl" v-if="isHappy">Zapraszam więc Cię na romantyczną kolację w Under Seoul w Walentynki!!!</p>
 
         <div class="flex flex-col gap-4">
           <div class="gap-4 justify-center mx-auto" v-if="!isHappy"> 
